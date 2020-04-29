@@ -64,7 +64,7 @@ void logger();
 void led_on();
 void led_off();
 int i,tilt[100];
-float t[3],x_val[100],y_val[100],z_val[100],x_a,y_a,var_x=0,var_y=0;
+float t[3],x_val[100],y_val[100],z_val[100],a_x,a_y,var_x=0,var_y=0;
 
 int main() {
    redLED=1;
@@ -151,10 +151,10 @@ void FXOS8700CQ_writeRegs(uint8_t * data, int len) {
 }
 void logger(){
    for(i=0; i<100; i++){
-      a_x=t[0]*9.8*0.005+var_x;
-      a_y=t[1]*9.8*0.005+var_y;
-      var_x=t[0]*9.8*0.005;
-      var_y=t[1]*9.8*0.005;
+      a_x=t[0]*9.8*50+var_x;
+      a_y=t[1]*9.8*50+var_y;
+      var_x=t[0]*9.8*50;
+      var_y=t[1]*9.8*50;
       if (a_x>5){
       //pc.printf("%f\n",t[1]);
          tilt[i]=1;
