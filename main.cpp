@@ -151,10 +151,10 @@ void FXOS8700CQ_writeRegs(uint8_t * data, int len) {
 }
 void logger(){
    for(i=0; i<100; i++){
-      a_x=t[0]*9.8*50+var_x;
-      a_y=t[1]*9.8*50+var_y;
-      var_x=t[0]*9.8*50;
-      var_y=t[1]*9.8*50;
+      a_x=t[0]*9.8*5+var_x;
+      a_y=t[1]*9.8*5+var_y;
+      var_x=t[0]*9.8*5;
+      var_y=t[1]*9.8*5;
       if (a_x>5){
       //pc.printf("%f\n",t[1]);
          tilt[i]=1;
